@@ -1,0 +1,72 @@
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-style: normal;
+  font-weight: normal;
+}
+
+h1 {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+}
+body {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+}
+
+.app {
+  display: flex;
+  justify-content: space-around;
+  background: #0079bf;
+  height: 590px;
+  padding: 25px;
+}
+.list {
+  background: #ebecf0;
+  border-radius: 10px;
+  height:auto;
+}
+.title {
+  margin: 12px;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 5px;
+  margin: 12px;
+}
+
+.btn {
+  color: #5e6c84;
+  border: none;
+  margin: 12px;
+}
+
+.btn:active {
+  cursor: pointer;
+}
+
+.header,
+.footer {
+  height: 55px;
+  background: #0067a3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #ffffff;
+  padding-right: 25px;
+  padding-left: 25px;
+}
+
+.header-title {
+  font-size: 28px;
+  line-height: 33px;
+}
