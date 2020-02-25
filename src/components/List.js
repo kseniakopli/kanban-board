@@ -8,10 +8,12 @@ class List extends Component {
       return <Card id={card.id} title={card.title} />;
     });
     return (
-      <div className="list">
-        <h1 className="title">{this.props.title}</h1>
-        {cards}
-        <Button />
+      <div>
+        <div className="list">
+          <h1 className="title">{this.props.title}</h1>
+          {cards}
+          <Button />
+        </div>
       </div>
     );
   }

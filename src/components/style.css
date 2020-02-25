@@ -21,27 +21,47 @@ body {
   font-size: 18px;
   line-height: 21px;
 }
+ul,
+li {
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+main{
+  position: relative;
+  z-index: -1;
+  height: 590px;
+}
+a {
+  text-decoration: none;
+}
 
 .app {
   display: flex;
   justify-content: space-around;
   background: #0079bf;
-  height: 590px;
   padding: 25px;
 }
 .list {
   background: #ebecf0;
   border-radius: 10px;
-  height:auto;
+
+  
+  
 }
 .title {
   margin: 12px;
+  padding-top:10px;
 }
 
 .card {
   background: #ffffff;
   border-radius: 5px;
   margin: 12px;
+}
+
+.card-title {
+  padding: 7px;
 }
 
 .btn {
@@ -62,11 +82,55 @@ body {
   justify-content: space-between;
   align-items: center;
   color: #ffffff;
-  padding-right: 25px;
-  padding-left: 25px;
+  padding-right: 30px;
+  padding-left: 30px;
 }
 
 .header-title {
   font-size: 28px;
   line-height: 33px;
+}
+
+.menu{
+  position: relative;
+}
+.dropdown-menu {
+  position: absolute;
+  top: 50px;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.dropdown-menu-list{
+  width: 90px;
+  background-color: #ffffff;
+  border-radius: 5px;
+
+}
+.dropdown-menu-list::before{
+    content: "";
+    width: 11px;
+    height: 11px;
+    position: absolute;
+    top:-5px;
+    left: 45%;
+    transform: rotate(45deg);
+    background-color:#ffffff;
+    z-index: 2;
+}
+
+.dropdown-menu-item{
+  padding:7px;
+  font-size: 14px;
+  line-height: 16px;
+  color: #000000;
+}
+
+.roll{
+  transform:rotate(180deg);
+}
+
+.brief-info{
+  margin-right:35px;
 }

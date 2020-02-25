@@ -5,7 +5,7 @@ class KanbanBoard extends Component {
   render() {
     return (
       <main className="app">
-        <List
+        <List 
           id="backlog"
           title="Backlog"
           cards={this.props.cards.filter(card => card.status === "backlog")}
