@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import List from "./List";
 import './style.css';
-class KanbanBoard extends Component {
+class KanbanBoard extends Component { 
   render() {
     return (
       <main className="app">
