@@ -32,7 +32,8 @@ main {
   z-index: 1;
   height: 590px;
 }
-a, link {
+a,
+link {
   text-decoration: none;
 }
 
@@ -75,9 +76,9 @@ a, link {
 .btn:hover {
   cursor: pointer;
 }
-.input-item{
-  border:none;
-  border-bottom: 1px solid #000000 ;
+.input-item {
+  border: none;
+  border-bottom: 1px solid #000000;
   width: 100%;
 }
 
@@ -139,4 +140,42 @@ a, link {
 
 .brief-info {
   margin-right: 35px;
+}
+
+.card-form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-form {
+  background: #0079bf;
+  position: static;
+  padding-top: 15px;
+}
+.card-detail {
+  background: #ffffff;
+  margin: 30px;
+  height: 500px;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.icon-btn {
+  background-color: #ffffff;
+}
+
+.card-form-title {
+  font-size: 24px;
+  line-height: 28px;
+  padding-bottom: none;
+}
+
+.card-creation-date {
+  color: #5e6c84;
+  font-size: 12px;
+}
+.card-description {
+  margin-top: 30px;
+  margin-right: 500px;
 }
