@@ -32,7 +32,7 @@ main {
   z-index: 1;
   height: 590px;
 }
-a {
+a, link {
   text-decoration: none;
 }
 
@@ -74,6 +74,11 @@ a {
 }
 .btn:hover {
   cursor: pointer;
+}
+.input-item{
+  border:none;
+  border-bottom: 1px solid #000000 ;
+  width: 100%;
 }
 
 .header,

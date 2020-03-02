@@ -1,11 +1,14 @@
 import React, { Component } from "react";
 import List from "./List";
-import './style.css';
-class KanbanBoard extends Component { 
+import "./style.css";
+
+class KanbanBoard extends Component {
+
   render() {
+
     return (
       <main className="app">
-        <List 
+        <List
           id="backlog"
           title="Backlog"
           cards={this.props.cards.filter(card => card.status === "backlog")}
@@ -25,6 +28,7 @@ class KanbanBoard extends Component {
           title="Finished"
           cards={this.props.cards.filter(card => card.status === "finished")}
         />
+
       </main>
     );
   }

@@ -14,7 +14,6 @@ class Footer extends Component {
         finishedTasksCounter++;
       }
     }
-console.log(activeTasksCounter);
     return (
       <footer className="footer">
         <div>
