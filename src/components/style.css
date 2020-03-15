@@ -27,10 +27,12 @@ li {
   padding: 0;
   margin: 0;
 }
+
+
 main {
   position: relative;
   z-index: 1;
-  height: 590px;
+  height: 90vh;
 }
 a,
 link {
@@ -42,6 +44,7 @@ link {
   justify-content: space-around;
   background: #0079bf;
   padding: 25px;
+  
 }
 .list {
   background: #ebecf0;
@@ -178,4 +181,13 @@ link {
 .card-description {
   margin-top: 30px;
   margin-right: 500px;
+}
+.dropdown-task-list{
+  width: 92%;
+  padding: 7px;
+  margin: 12px;
+  border:none;
+  font-family: Roboto;
+  font-size: 14px;
+  line-height: 21px;
 }

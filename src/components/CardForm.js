@@ -1,18 +1,18 @@
 import React, { Component } from "react";
 import "./style.css";
 import { ReactComponent as Cross } from "../cross.svg";
-import cardList from "./cardList";
 import {Link} from 'react-router-dom';
 
 class CardForm extends Component {
   render() {
     console.log(this);
-    let card = cardList.find(card => card.id == this.props.match.params.id);
+    let card = this.props.match.params.id;
+    console.log(this.props.title);
     return (
       <main className="card-form">
         <div className="card-detail">
           <div className="card-form-header">
-            <div className="card-form-title">{card.title}</div>
+            <div className="card-form-title">{this.props.location.propsSearch}</div>
             <button className="btn icon-btn">
             <Link to={"/"}><Cross /></Link>
             </button>

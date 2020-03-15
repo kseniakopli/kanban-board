@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Card from "./Card";
 import InputItem from "./InputItem";
+import InputList from "./InputList";
 import "./style.css";
 
 class List extends Component {
@@ -8,24 +9,33 @@ class List extends Component {
     super(props);
     this.state = { isСlicked: false, isUpdated: false };
   }
+
   toggleState() {
-    this.setState({ isСlicked: !this.state.isClicked });
+    if (this.state.isСlicked === false) {
+      this.setState({ isСlicked: true });
+    } else {
+      this.setState({ isСlicked: false });
+    }
   }
-  updateData = value => {
-    this.setState({ isUpdated: !this.state.isUpdated });
-  };
+
   render() {
     let dropdown;
-
     if (this.state.isСlicked) {
-      dropdown = <InputItem updateData={this.updateData} />;
-      if (this.state.isUpdated) {
-        dropdown = undefined;
+      if (this.props.id === "backlog") {
+        dropdown = <InputItem onBlur={this.props.addTask.bind(this)} />;
+      } else {
+        dropdown = (
+          <InputList
+            cardsAll={this.props.cardsAll}
+            id={this.props.id}
+            changeStatus={this.props.changeStatus}
+          />
+        );
       }
     }
 
     let cards = this.props.cards.map(card => {
-      return <Card key={card.id} id={card.id} title={card.title}/>;
+      return <Card key={card.id} id={card.id} title={card.title} />;
     });
 
     return (

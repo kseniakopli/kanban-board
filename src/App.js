@@ -5,11 +5,12 @@ import { Router, Route, Switch } from "react-router-dom";
 import { createBrowserHistory } from "history";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import "./components/style.css";
 
 class App extends Component {
   render() {
     return (
-      <div>
+      <div className="kanban-board">
         <Header />
         <Router history={createBrowserHistory()}>
           <Switch>
