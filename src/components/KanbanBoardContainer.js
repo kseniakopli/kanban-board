@@ -42,10 +42,29 @@ class KanbanBoardContainer extends Component {
   }
 
   changeStatus(e) {
-/*
-
-  
-*/
+    let prevStateArr = this.state.cards.filter(
+      card => card.id == e.target.value
+    );
+    let prevState = prevStateArr[0];
+    let index = prevState.id - 1;
+    let newStatus;
+    if (prevState.status == "backlog") {
+      newStatus = "ready";
+    }
+    if (prevState.status == "ready") {
+      newStatus = "in-progress";
+    }
+    if (prevState.status == "in-progress") {
+      newStatus = "finished";
+    }
+    let nextStateItem = prevState;
+    nextStateItem.status = newStatus;
+    let nextState = update(this.state.cards, {
+      index: {
+        $set: nextStateItem
+      }
+    });
+    this.setState({ cards: nextState });
   }
 
   render() {

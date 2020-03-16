@@ -5,8 +5,7 @@ import "./style.css";
 
 class InputList extends Component {
   render() {
-    let tasks;
-    let taskslist;
+    let tasks, taskslist;
     if (this.props.id === "ready") {
       tasks = this.props.cardsAll.filter(card => card.status === "backlog");
     }
@@ -16,14 +15,13 @@ class InputList extends Component {
     if (this.props.id === "finished") {
       tasks = this.props.cardsAll.filter(card => card.status === "in-progress");
     }
-    console.log(tasks);
     taskslist = tasks.map(task => {
-      return (<option>{task.title}</option>);
+      return (<option value={task.id}>{task.title}</option>);
     });
 
     return (
-      <select className="dropdown-task-list" onChange={this.props.changeStatus}>
-        <option defaultValue>Выбрать</option>
+      <select className="dropdown-task-list" onChange={this.props.changeStatus.bind(this)}>
+        <option defaultValue>Choose</option>
         {taskslist}
       </select>
     );

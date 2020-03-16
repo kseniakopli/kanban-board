@@ -28,7 +28,6 @@ li {
   margin: 0;
 }
 
-
 main {
   position: relative;
   z-index: 1;
@@ -44,7 +43,6 @@ link {
   justify-content: space-around;
   background: #0079bf;
   padding: 25px;
-  
 }
 .list {
   background: #ebecf0;
@@ -87,7 +85,7 @@ link {
 
 .header,
 .footer {
-  height: 55px;
+  height: 5vh;
   background: #0067a3;
   display: flex;
   justify-content: space-between;
@@ -182,11 +180,11 @@ link {
   margin-top: 30px;
   margin-right: 500px;
 }
-.dropdown-task-list{
+.dropdown-task-list {
   width: 92%;
   padding: 7px;
   margin: 12px;
-  border:none;
+  border: none;
   font-family: Roboto;
   font-size: 14px;
   line-height: 21px;
