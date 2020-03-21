@@ -3,8 +3,8 @@ import "./style.css";
 
 class Footer extends Component {
   render() {
-    let activeTasksCounter = 0;
-    let finishedTasksCounter = 0;
+    let activeTasksCounter = this.props.activeTasksCounter;
+    let finishedTasksCounter = this.props.finishedTasksCounter;
 
     return (
       <footer className="footer">

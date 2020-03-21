@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import KanbanBoard from "./KanbanBoard";
+import Footer from "./Footer";
 import update from "react-addons-update";
 
 class KanbanBoardContainer extends Component {
@@ -32,13 +33,16 @@ class KanbanBoardContainer extends Component {
   }
   addTask(e) {
     let cardIndex = this.state.cards.length;
-    let newTask = {
-      id: cardIndex + 1,
-      title: e.target.value,
-      status: "backlog"
-    };
-    let nextState = update(this.state.cards, { $push: [newTask] });
-    this.setState({ cards: nextState });
+    if (e.target.value) {
+      let newTask = {
+        id: cardIndex + 1,
+        title: e.target.value,
+        status: "backlog"
+      };
+      let nextState = update(this.state.cards, { $push: [newTask] });
+      this.setState({ cards: nextState });
+      e.target.value = "";
+    }
   }
 
   changeStatus(e) {
@@ -48,13 +52,13 @@ class KanbanBoardContainer extends Component {
     let prevState = prevStateArr[0];
     let index = prevState.id - 1;
     let newStatus;
-    if (prevState.status == "backlog") {
+    if (prevState.status === "backlog") {
       newStatus = "ready";
     }
-    if (prevState.status == "ready") {
+    if (prevState.status === "ready") {
       newStatus = "in-progress";
     }
-    if (prevState.status == "in-progress") {
+    if (prevState.status === "in-progress") {
       newStatus = "finished";
     }
     let nextStateItem = prevState;
@@ -65,6 +69,7 @@ class KanbanBoardContainer extends Component {
       }
     });
     this.setState({ cards: nextState });
+    e.target.value = 0;
   }
 
   render() {
@@ -80,11 +85,17 @@ class KanbanBoardContainer extends Component {
     }
 
     return (
-      <KanbanBoard
-        cards={this.state.cards}
-        addTask={this.addTask.bind(this)}
-        changeStatus={this.changeStatus.bind(this)}
-      />
+      <div>
+        <KanbanBoard
+          cards={this.state.cards}
+          addTask={this.addTask.bind(this)}
+          changeStatus={this.changeStatus.bind(this)}
+        />
+        <Footer
+          activeTasksCounter={activeTasksCounter}
+          finishedTasksCounter={finishedTasksCounter}
+        />
+      </div>
     );
   }
 }
